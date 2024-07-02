@@ -18,7 +18,7 @@ async function getUserInfo() {
   });
   return user;
 }
-
+console.log("Hello world");
 const DashboardPage = async () => {
   const user = await getUserInfo();
   const amount = user?.Balance?.map((b) => b.amount);
