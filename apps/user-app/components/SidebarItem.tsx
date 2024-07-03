@@ -1,5 +1,6 @@
 "use client";
-import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 const SidebarItem = ({
@@ -12,12 +13,11 @@ const SidebarItem = ({
   icon: React.ReactNode;
 }) => {
   const pathname = usePathname();
-  const router = useRouter();
   const active = pathname === href;
   return (
-    <div
+    <Link
+      href={href}
       className={`flex items-end ${active ? "text-[#6a51a6]" : "text-slate-500"} cursor-pointer`}
-      onClick={() => router.push(href)}
     >
       <div className="pr-2">{icon}</div>
       <div
@@ -25,7 +25,7 @@ const SidebarItem = ({
       >
         {title}
       </div>
-    </div>
+    </Link>
   );
 };
 
