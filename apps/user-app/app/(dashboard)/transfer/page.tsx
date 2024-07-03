@@ -48,6 +48,7 @@ const TransferPage = async () => {
         <div>
           <BalanceCard amount={balance?.amount} locked={balance?.locked} />
           <div className="pt-4">
+            {/* @ts-ignore */}
             <OnRampTransaction transactions={transactions} />
           </div>
         </div>
